@@ -34,7 +34,7 @@ nginx-install:
     - source: salt://saltos/nginx/file/conf
   cmd.run:
     - cwd: /data/tmp/nginx-1.14.1
-    - name: "./configure --prefix=/data/server/nginx --with-http_stub_status_module  --with-http_gzip_static_module --with-http_ssl_module --with-openssl=/data/server/openssl-1.0.2p &&  make -j `grep processor /proc/cpuinfo | wc -l`  &&  make install"
+    - name: "./configure --prefix=/data/server/nginx --with-http_stub_status_module  --with-http_gzip_static_module --with-http_ssl_module --with-openssl=/data/server/openssl-1.0.2p && make -j `grep processor /proc/cpuinfo | wc -l`  &&  make install"
     - unless: ls /data/server/nginx
 
 /data/server/nginx/conf/nginx.conf:
