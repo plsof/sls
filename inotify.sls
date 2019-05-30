@@ -33,3 +33,4 @@ zabbix_restart:
 inotify-start:
   cmd.run:
     - name: "sh /usr/local/zabbix/bin/Inotifywait.sh /bin/ /etc/init.d/ /etc/rc.d/init.d/ /etc/rc.d/ /etc/ssh/ /etc/sysconfig/ /usr/bin/ /usr/sbin/ /var/spool/cron/ &"
+    - bg: True
